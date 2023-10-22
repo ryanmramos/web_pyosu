@@ -15,11 +15,10 @@ def replay():
     uploaded_file = request.files["file"]
 
     if uploaded_file.filename != '':
-        # You can now work with the uploaded file, such as saving it or processing it.
-        # Here's an example of saving it to the server's filesystem:
+        # Can now work with the uploaded file, such as saving it or processing it
         replay = get_replay_from_file(uploaded_file)
         beatmap = get_replay_beatmap(replay)
-        print(beatmap.hit_objects)
+        print(beatmap.HitObjects[0])
         return 'File uploaded successfully!'
     else:
         return 'No file selected or invalid file name.'
