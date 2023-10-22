@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>pyosu</title>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        <script>
+            function handleFile() {
+                console.log('test')
+                const fileInput = document.getElementById('osrFileInput');
+                const selectedFile = fileInput.files[0]; // Get the first selected file
+            
+                if (selectedFile) {
+                    if (selectedFile.name.endsWith('.osr')) {
+                        // The selected file is an .osr file
+                        // You can now work with the file, e.g., upload it to a server or process it locally.
+                        console.log('Selected .osr file:', selectedFile.name);
+                    } else {
+                        alert('Please select an .osr file.');
+                    }
+                } else {
+                    alert('No file selected.');
+                }
+            }
+        </script>
+    </body>
+</html>

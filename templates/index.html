@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body%}
+    <form>
+        <!-- <input type="file" accept=".osr" name="r">
+        <button type="submit">Submit replay</button> -->
+        <input type="file" id="osrFileInput">
+        <button onclick="handleFile(); return false;">Upload .osr File</button>
+
+    </form>
+    <form action="/replay" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Uplaod file</button>
+    </form>
+{% endblock %}
+    
