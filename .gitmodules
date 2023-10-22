@@ -1,0 +1,3 @@
+[submodule "pyosu"]
+	path = pyosu
+	url = https://github.com/ryanmramos/pyosu.git
