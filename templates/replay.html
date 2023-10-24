@@ -2,6 +2,15 @@
 
 {% block body%}
     <p>File uploaded successfully!</p>
+    <div>{{ User }}</div>
+    <div> {{ BMName }} </div>
+
+    <svg height="50vw" width="50vw" id="hitCircle">
+        <circle cx="50%" cy="50%" r="25vw" fill="transparent" stroke="white" />
+        <circle cx="50%" cy="50%" r="0.33vw" fill="cyan" stroke="blue" />
+
+    </svg>
+
     {% for ObjectTap in HitObjectTaps %}
         <div>
             {{ ObjectTap }}

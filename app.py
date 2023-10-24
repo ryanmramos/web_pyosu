@@ -11,7 +11,7 @@ def index():
 
 @app.route("/replay", methods=["POST"])
 def replay():
-    print(request.files['file'])
+    # print(request.files['file'])
     uploaded_file = request.files["file"]
 
     if uploaded_file.filename != '':
@@ -21,6 +21,7 @@ def replay():
         
         # Get taps on each hit object (excluding spinners)
         hit_object_taps = get_taps_on_hit_objects(beatmap, replay)
-        return render_template('replay.html', HitObjectTaps=hit_object_taps)
+        return render_template('replay.html', HitObjectTaps=hit_object_taps, User=replay.username, BMName=beatmap.MetadataSection.Title)
     else:
+        # TODO: change to an error.html
         return 'No file selected or invalid file name.'

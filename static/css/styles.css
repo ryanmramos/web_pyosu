@@ -2,3 +2,9 @@ body {
     background-color: #171A1C;
     color: #FFFFFF;
 }
+
+#hitCircle {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
