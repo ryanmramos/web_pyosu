@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 
 {% block body%}
-    <p>Replay</p>
+    <p>File uploaded successfully!</p>
+    {% for ObjectTap in HitObjectTaps %}
+        <div>
+            {{ ObjectTap }}
+        </div>
+    {% endfor %}
 {% endblock %}

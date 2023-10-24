@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import sys
 
-from pyosu.web_api import get_replay_from_file, get_replay_beatmap
+from pyosu.web_api import get_replay_from_file, get_replay_beatmap, get_taps_on_hit_objects
 
 app = Flask(__name__)
 
@@ -18,7 +18,9 @@ def replay():
         # Can now work with the uploaded file, such as saving it or processing it
         replay = get_replay_from_file(uploaded_file)
         beatmap = get_replay_beatmap(replay)
-        print(beatmap.HitObjects[0])
-        return 'File uploaded successfully!'
+        
+        # Get taps on each hit object (excluding spinners)
+        hit_object_taps = get_taps_on_hit_objects(beatmap, replay)
+        return render_template('replay.html', HitObjectTaps=hit_object_taps)
     else:
         return 'No file selected or invalid file name.'
