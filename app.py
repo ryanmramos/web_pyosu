@@ -21,7 +21,7 @@ def replay():
         
         # Get taps on each hit object (excluding spinners)
         hit_object_taps = get_taps_on_hit_objects(beatmap, replay)
-        return render_template('replay.html', HitObjectTaps=hit_object_taps, User=replay.username, BMName=beatmap.MetadataSection.Title)
+        return render_template('replay.html', HitObjectTaps=hit_object_taps, User=replay.username, BMMeta=beatmap.MetadataSection)
     else:
         # TODO: change to an error.html
         return 'No file selected or invalid file name.'
